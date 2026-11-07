@@ -17,6 +17,8 @@
   --red-t: #FCE8E6;
   --grey-t: #F1F3F0;
   --radius: 16px;
+  --top-h: 64px;  /* alto fijo de la barra superior */
+  --nav-h: 56px;  /* alto de la navegación cuando va arriba (computador) */
   --font: 'Atkinson Hyperlegible', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   --display: 'Crimson Pro', Georgia, 'Times New Roman', serif;
 }
@@ -50,10 +52,11 @@ hr { border: 0; border-top: 1px solid #E6EBE6; margin: 4px 0; }
 /* Barra superior */
 .topbar {
   position: sticky; top: 0; z-index: 20;
+  height: var(--top-h);
   background: rgba(255, 255, 255, .96);
   border-bottom: 1px solid var(--line);
   display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  padding: 10px 16px;
+  padding: 0 16px;
   backdrop-filter: blur(6px);
 }
 .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--ink); font-family: var(--display); font-weight: 700; font-size: 24px; }
@@ -69,6 +72,7 @@ hr { border: 0; border-top: 1px solid #E6EBE6; margin: 4px 0; }
   display: grid; grid-template-columns: repeat(3, 1fr);
   padding: 6px 8px calc(8px + env(safe-area-inset-bottom));
 }
+.bottomnav[hidden] { display: none; }
 .bottomnav a { display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none; color: var(--muted); font-size: 12px; padding: 6px 0; min-height: 48px; border-radius: 10px; }
 .bottomnav a.active { color: var(--green); font-weight: 700; background: var(--green-t); }
 .bottomnav .ic { width: 22px; height: 22px; }
@@ -276,9 +280,10 @@ tr:last-child td { border-bottom: 0; }
   main { order: 3; }
   .split { flex-direction: row; align-items: flex-start; gap: 24px; }
   .col-main { flex: 3 1 0; }
-  .col-side { flex: 2 1 0; position: sticky; top: 84px; }
+  .col-side { flex: 2 1 0; position: sticky; top: calc(var(--top-h) + var(--nav-h) + 16px); }
   .map { height: 520px; }
-  .bottomnav { position: sticky; top: 65px; bottom: auto; display: flex; justify-content: center; gap: 8px; border-top: 0; border-bottom: 1px solid var(--line); padding: 6px 16px; z-index: 15; }
+  .bottomnav { position: sticky; top: var(--top-h); bottom: auto; height: var(--nav-h); display: flex; align-items: center; justify-content: center; gap: 8px; border-top: 0; border-bottom: 1px solid var(--line); padding: 0 16px; z-index: 15; }
+  .bottomnav[hidden] { display: none; }
   .bottomnav a { flex-direction: row; gap: 8px; font-size: 14px; padding: 8px 16px; min-height: 44px; }
   .toast { bottom: 32px; }
 }
