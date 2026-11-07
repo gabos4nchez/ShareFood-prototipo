@@ -52,16 +52,6 @@ python -m http.server 8000
 # Luego abre http://localhost:8000
 ```
 
-## Publicarlo con GitHub Pages
-
-1. Crea un repositorio público en GitHub, por ejemplo `sharefood-prototipo`.
-2. Sube **todo el contenido de esta carpeta** a la raíz del repositorio. Asegúrate de incluir el archivo `.nojekyll`: en algunos sistemas está oculto.
-3. En el repositorio ve a **Settings → Pages**.
-4. En **Build and deployment**, elige **Deploy from a branch**, la rama `main` y la carpeta `/ (root)`. Guarda.
-5. Espera uno o dos minutos. La dirección será:
-   `https://TU-USUARIO.github.io/sharefood-prototipo/`
-6. Con esa dirección se genera el código QR para la presentación.
-
 ## Créditos
 
 Diseño e investigación: Gabriel Sánchez Cristancho. Prototipo elaborado con apoyo de Claude (Anthropic, 2026).
