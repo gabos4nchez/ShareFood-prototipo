@@ -1,0 +1,14 @@
+{
+  "name": "ShareFood · Prototipo",
+  "short_name": "ShareFood",
+  "description": "Prototipo académico para redistribuir excedentes de comida hacia estudiantes universitarios de Manizales.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F4F6F1",
+  "theme_color": "#1D6B47",
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
